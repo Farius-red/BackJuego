@@ -32,7 +32,7 @@ function get(req, res) {
 function update(req, res) {
     Controller.update(req.body)
         .then((user) => {
-            resp.success(req, res, user, 200);
+            resp.success(req, res, user, 201);
         })
         .catch((err) => {
             resp.error(req, res, err.message, 500);

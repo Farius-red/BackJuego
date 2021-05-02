@@ -6,14 +6,17 @@ const config = require('../config.js');
 const app = express();
 
 
-const user = require('./components/user/network')
+const user = require('./components/user/network');
+const auth = require('./components/auth/auth.network');
 
 app.use(bodyParser.json());
 const swaggerDoc = require('./swagger.json');
 
+// ruta de documentacion 
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 //router 
+app.use('/api/auth', auth);
 app.use('/api/user', user);
 
 app.listen(config.api.port, () => {
