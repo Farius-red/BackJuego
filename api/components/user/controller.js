@@ -34,7 +34,7 @@ module.exports = function (injectStore) {
             await auth.update({
                 id: user.id,
                 username: user.username,
-                clave: user.clave,
+                clave: body.clave,
             })
         }
 

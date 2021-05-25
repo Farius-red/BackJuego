@@ -13,10 +13,9 @@ function login(req, res) {
     Controller.login(req.body.username, req.body.clave)
         .then((token) => {
             response.success(req, res, token, 200)
-        .catch((err) => {
-                    response.error(req, res, 'Informacion invalida', 400);
-                });
-    })
+    }) .catch((err) => {
+        response.error(req, res,  `informacion invalida`, 400);
+    });
 }
 
 
